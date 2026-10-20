@@ -21,4 +21,7 @@ Route::put('/hotels/{hotel}', [HotelController::class, 'update']);
 Route::patch('/hotels/{hotel}', [HotelController::class, 'update']);
 Route::delete('/hotels/{hotel}', [HotelController::class, 'destroy']);
 
-Route::get('/rooms', [RoomController::class, 'index']);
+
+
+Route::apiResource('rooms', RoomController::class);
+Route::get('/hotels/{hotel}/rooms', [RoomController::class, 'byHotel']);
